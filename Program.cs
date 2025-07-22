@@ -36,7 +36,8 @@ namespace RefactoringExerciseI
 				new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
             };
 
-            var app = new GameInventory(Items);
+            var updaterFactory = new ItemUpdaterFactory();
+            var app = new GameInventory(Items, updaterFactory);
 
 
             for (int index = 0; index < 31; index++)

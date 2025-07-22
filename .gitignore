@@ -1,0 +1,52 @@
+# Visual Studio files
+.vs/
+
+# Build artifacts
+[Bb]in/
+[Oo]bj/
+
+# NuGet packages
+*.nuget/
+packages/
+
+# Rider files
+.idea/
+*.sln.DotSettings
+*.user
+*.userprefs
+
+# VS Code files
+.vscode/
+
+# Other common ignored files
+*.suo
+*.user
+*.userosscache
+*.pdb
+*.opendb
+*.log
+*.bak
+*.ncb
+*.sdf
+*.cache
+*.aps
+*.vshost.*
+*.testsettings
+*.trx
+*.webtest
+*.docstates
+*.resharper
+*.dotcover
+*.codecoverage
+*.vspscc
+*.vssscc
+*.buildscc
+*.scc
+
+# macOS files
+.DS_Store
+
+# Linux files
+*~
+
+practices-1.sln

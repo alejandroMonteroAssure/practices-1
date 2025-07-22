@@ -2,6 +2,7 @@
 using NuGet.Frameworks;
 using NUnit.Framework;
 using RefactoringExerciseI.Inventory;
+using RefactoringExerciseI;
 
 namespace RefactoringExerciseI.UnitTest
 {
@@ -15,7 +16,10 @@ namespace RefactoringExerciseI.UnitTest
         public void BackstagePasses(int sellIn, int quality, int expectedQuality, int expectedSellIn)
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a Pokemon Gym concert", SellIn = sellIn, Quality = quality } };
-            GameInventory app = new(Items);
+
+            var updaterFactory = new ItemUpdaterFactory();
+            GameInventory app = new(Items, updaterFactory);
+
             app.UpdateQuality();
 
             Assert.That(Items[0].Name, Is.EqualTo("Backstage passes to a Pokemon Gym concert"));
@@ -27,7 +31,8 @@ namespace RefactoringExerciseI.UnitTest
         public void Sulfuras()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 10, Quality = 10 } };
-            GameInventory app = new(Items);
+            var updaterFactory = new ItemUpdaterFactory();
+            GameInventory app = new(Items, updaterFactory);
             app.UpdateQuality();
 
             Assert.That(Items[0].Name, Is.EqualTo("Sulfuras, Hand of Ragnaros"));
@@ -39,7 +44,8 @@ namespace RefactoringExerciseI.UnitTest
         public void BlockA_AgedBrie_QualityExceedFifty()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = 5, Quality = 7 } };
-            GameInventory app = new(Items);
+            var updaterFactory = new ItemUpdaterFactory();
+            GameInventory app = new(Items, updaterFactory);
             app.UpdateQuality();
 
             Assert.That(Items[0].Name, Is.EqualTo("Aged Brie"));
@@ -52,7 +58,8 @@ namespace RefactoringExerciseI.UnitTest
         public void BlockA_AgedBrie_EqualsToFifty(int initialSellIn, int initialQuality, int expectedQuality, int expectedSellIn)
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = initialSellIn, Quality = initialQuality } };
-            GameInventory app = new(Items);
+            var updaterFactory = new ItemUpdaterFactory();
+            GameInventory app = new(Items, updaterFactory);
             app.UpdateQuality();
 
             Assert.That(Items[0].Name, Is.EqualTo("Aged Brie"));
@@ -64,7 +71,8 @@ namespace RefactoringExerciseI.UnitTest
         public void Foo()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
-            GameInventory app = new(Items);
+            var updaterFactory = new ItemUpdaterFactory();
+            GameInventory app = new(Items, updaterFactory);
             app.UpdateQuality();
 
             Assert.That(Items[0].Name, Is.EqualTo("foo"));
@@ -76,7 +84,8 @@ namespace RefactoringExerciseI.UnitTest
         public void EmptyList()
         {
             IList<Item> Items = new List<Item> { };
-            GameInventory app = new(Items);
+            var updaterFactory = new ItemUpdaterFactory();
+            GameInventory app = new(Items, updaterFactory);
             app.UpdateQuality();
             Assert.That(Items, Is.Empty);
         }
@@ -87,7 +96,8 @@ namespace RefactoringExerciseI.UnitTest
         public void BlockA_NormalItem_DecreasesQuality(int initialSellIn, int initialQuality, int expectedQuality, int expectedSellIn, string itemName)
         {
             IList<Item> Items = new List<Item> { new Item { Name = itemName, SellIn = initialSellIn, Quality = initialQuality } };
-            GameInventory app = new(Items);
+            var updaterFactory = new ItemUpdaterFactory();
+            GameInventory app = new(Items, updaterFactory);
             app.UpdateQuality();
             Assert.That(Items[0].Name, Is.EqualTo(itemName));
             Assert.That(Items[0].Quality, Is.EqualTo(expectedQuality));
@@ -99,7 +109,8 @@ namespace RefactoringExerciseI.UnitTest
         public void BlockA_NormalItem_QualityDoesNotDecreaseBelowZero(int initialSellIn, int initialQuality, int expectedQuality, int expectedSellIn, string itemName)
         {
             IList<Item> Items = new List<Item> { new Item { Name = itemName, SellIn = initialSellIn, Quality = initialQuality } };
-            GameInventory app = new(Items);
+            var updaterFactory = new ItemUpdaterFactory();
+            GameInventory app = new(Items, updaterFactory);
             app.UpdateQuality();
 
             Assert.That(Items[0].Name, Is.EqualTo(itemName));
@@ -117,7 +128,8 @@ namespace RefactoringExerciseI.UnitTest
         public void BlockA_BackstagePasses_And_AgedBries_IncreasesQualityByRules(int initialSellIn, int initialQuality, int expectedQuality, int expectedSellIn, string itemName)
         {
             IList<Item> Items = new List<Item> { new Item { Name = itemName, SellIn = initialSellIn, Quality = initialQuality } };
-            GameInventory app = new(Items);
+            var updaterFactory = new ItemUpdaterFactory();
+            GameInventory app = new(Items, updaterFactory);
             app.UpdateQuality();
 
             Assert.That(Items[0].Name, Is.EqualTo(itemName));
@@ -131,7 +143,8 @@ namespace RefactoringExerciseI.UnitTest
         public void BlockA_BackstagePasses_QualityDoesNotExceedFifty(int initialSellIn, int initialQuality, int expectedQuality, int expectedSellIn, string itemName)
         {
             IList<Item> Items = new List<Item> { new Item { Name = itemName, SellIn = initialSellIn, Quality = initialQuality } };
-            GameInventory app = new(Items);
+            var updaterFactory = new ItemUpdaterFactory();
+            GameInventory app = new(Items, updaterFactory);
             app.UpdateQuality();
 
             Assert.That(Items[0].Name, Is.EqualTo(itemName));
@@ -144,7 +157,8 @@ namespace RefactoringExerciseI.UnitTest
         public void BlockC_AgedBrie_NegativeSellIn(int initialSellIn, int initialQuality, int expectedQuality, int expectedSellIn)
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = initialSellIn, Quality = initialQuality } };
-            GameInventory app = new(Items);
+            var updaterFactory = new ItemUpdaterFactory();
+            GameInventory app = new(Items, updaterFactory);
             app.UpdateQuality();
 
             Assert.That(Items[0].Name, Is.EqualTo("Aged Brie"));
@@ -157,7 +171,8 @@ namespace RefactoringExerciseI.UnitTest
         public void BlockC_AgedBrie_NegativeSellIn_SecondCase(int initialSellIn, int initialQuality, int expectedQuality, int expectedSellIn)
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Aged Brie", SellIn = initialSellIn, Quality = initialQuality } };
-            GameInventory app = new(Items);
+            var updaterFactory = new ItemUpdaterFactory();
+            GameInventory app = new(Items, updaterFactory);
             app.UpdateQuality();
 
             Assert.That(Items[0].Name, Is.EqualTo("Aged Brie"));
@@ -170,7 +185,8 @@ namespace RefactoringExerciseI.UnitTest
         public void BlockC_BackstagePasses_NegativeSellIn_SecondCase(int initialSellIn, int initialQuality, int expectedQuality, int expectedSellIn)
         {
             IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a Pokemon Gym concert", SellIn = initialSellIn, Quality = initialQuality } };
-            GameInventory app = new(Items);
+            var updaterFactory = new ItemUpdaterFactory();
+            GameInventory app = new(Items, updaterFactory);
             app.UpdateQuality();
 
             Assert.That(Items[0].Name, Is.EqualTo("Backstage passes to a Pokemon Gym concert"));
@@ -184,7 +200,8 @@ namespace RefactoringExerciseI.UnitTest
         public void BlockC_ExpiredNormalItem_QualityDecreasesTwice(int initialSellIn, int initialQuality, int expectedQuality, int expectedSellIn, string itemName)
         {
             IList<Item> Items = new List<Item> { new Item { Name = itemName, SellIn = initialSellIn, Quality = initialQuality } };
-            GameInventory app = new(Items);
+            var updaterFactory = new ItemUpdaterFactory();
+            GameInventory app = new(Items, updaterFactory);
             app.UpdateQuality();
 
             Assert.That(Items[0].Name, Is.EqualTo(itemName));

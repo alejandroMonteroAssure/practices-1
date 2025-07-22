@@ -7171,19 +7171,19 @@
     ]
   },
   "packageFolders": {
-    "/home/alemonteroassure/.nuget/packages/": {}
+    "/home/alemontc7/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/alemonteroassure/practices/practices-1/GameInventory.csproj",
+      "projectUniqueName": "/home/alemontc7/practices-1/GameInventory.csproj",
       "projectName": "GameInventory",
-      "projectPath": "/home/alemonteroassure/practices/practices-1/GameInventory.csproj",
-      "packagesPath": "/home/alemonteroassure/.nuget/packages/",
-      "outputPath": "/home/alemonteroassure/practices/practices-1/obj/",
+      "projectPath": "/home/alemontc7/practices-1/GameInventory.csproj",
+      "packagesPath": "/home/alemontc7/.nuget/packages/",
+      "outputPath": "/home/alemontc7/practices-1/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/alemonteroassure/.nuget/NuGet/NuGet.Config"
+        "/home/alemontc7/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
