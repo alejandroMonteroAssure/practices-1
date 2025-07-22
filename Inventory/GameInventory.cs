@@ -14,6 +14,74 @@
             //quality updater
             for (var index = 0; index < _items.Count; index++)
             {
+
+                /*
+                
+                So there are 4 types of updaters
+                Aged brie updater
+                Backstage passed updater
+                Sulfuras, Hand of Ragnaros
+                Other types - general types
+                
+
+                The easiest one to depict here is the general type or base type:
+
+                if(_items[index].Quality > 0) then: _items[index].Quality--;
+                _items[index].SellIn--;
+
+                if (_items[index].Quality > 0 )
+                {
+                    _items[index].Quality--;
+                }
+
+                Aged Brie updater:
+
+                if (_items[index].Quality < 50)
+                {
+                    _items[index].Quality++;
+                }
+
+                _items[index].SellIn--;
+
+                if(items[index].SellIn < 0){
+                    if (_items[index].Quality < 50)
+                    {
+                        _items[index].Quality++;
+                    }
+                }
+
+                Backstage passes:
+
+                if (_items[index].Quality < 50)
+                    {
+                        _items[index].Quality++;
+
+                        if (_items[index].Name == "Backstage passes to a Pokemon Gym concert")
+                        {
+                            if (_items[index].SellIn < 11 && _items[index].Quality < 50)
+                            {
+                                _items[index].Quality++;
+                            }
+
+                            if (_items[index].SellIn < 6 && _items[index].Quality < 50)
+                            {
+                                _items[index].Quality++;
+                            }
+                        }
+                    }
+
+                    _items[index].SellIn--;
+
+                    if (_items[index].SellIn < 0) 
+                        _items[index].Quality = _items[index].Quality - _items[index].Quality;
+                        its the same as saying items.Quality = 0;
+                {
+
+                THERE IS NO STRATEGY FOR SULFURAS, HAND OF RAGNAROS, CAN BE GENERIC
+
+
+                */
+
                 // it is noticeable that for any name S such that s does not belong to
                 // {Aged Brie, Sulfuras, hand of ragnaros and Backstage passes to a Pokemon Gym concert}
                 // then the rule:
