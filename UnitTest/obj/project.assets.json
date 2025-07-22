@@ -4436,19 +4436,19 @@
     ]
   },
   "packageFolders": {
-    "/home/alemonteroassure/.nuget/packages/": {}
+    "/home/alemontc7/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/alemonteroassure/practices/practices-1/UnitTest/UnitTest.csproj",
+      "projectUniqueName": "/home/alemontc7/practices-1/UnitTest/UnitTest.csproj",
       "projectName": "UnitTest",
-      "projectPath": "/home/alemonteroassure/practices/practices-1/UnitTest/UnitTest.csproj",
-      "packagesPath": "/home/alemonteroassure/.nuget/packages/",
-      "outputPath": "/home/alemonteroassure/practices/practices-1/UnitTest/obj/",
+      "projectPath": "/home/alemontc7/practices-1/UnitTest/UnitTest.csproj",
+      "packagesPath": "/home/alemontc7/.nuget/packages/",
+      "outputPath": "/home/alemontc7/practices-1/UnitTest/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/alemonteroassure/.nuget/NuGet/NuGet.Config"
+        "/home/alemontc7/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -4460,8 +4460,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/alemonteroassure/practices/practices-1/GameInventory.csproj": {
-              "projectPath": "/home/alemonteroassure/practices/practices-1/GameInventory.csproj"
+            "/home/alemontc7/practices-1/GameInventory.csproj": {
+              "projectPath": "/home/alemontc7/practices-1/GameInventory.csproj"
             }
           }
         }
